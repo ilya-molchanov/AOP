@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LoggerRewriting">
+      <HintPath>..\LoggerRewriting\bin\Debug\LoggerRewriting.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ServiceBus, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ServiceBus.v1_1.1.0.6\lib\net40-full\Microsoft.ServiceBus.dll</HintPath>
     </Reference>

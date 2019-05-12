@@ -14,6 +14,7 @@ namespace ImgScanner
 {
     using System.Drawing;
     using Common.Models.Properties;
+    using LoggerRewriting;
 
     internal class ImagesAggregator
     {
@@ -45,6 +46,7 @@ namespace ImgScanner
             _serviceBusClient = serviceBusClient;
         }
 
+        [LoggerRewriting]
         public void ProcessFile(FileStream stream)
         {
             if (_usedFiles.Contains(stream.Name))
@@ -77,6 +79,7 @@ namespace ImgScanner
             }
         }
 
+        [LoggerRewriting]
         private void SendDocument()
         {
             lock (_lockObj)
@@ -102,6 +105,7 @@ namespace ImgScanner
             }
         }
 
+        [LoggerRewriting]
         private void DeleteUsedFiles()
         {
             foreach (var file in _usedFiles)
@@ -111,6 +115,7 @@ namespace ImgScanner
             _usedFiles.Clear();
         }
 
+        [LoggerRewriting]
         private void InitDocAndSection()
         {
             var outFileName = $"scan_result_{DateTime.Now.ToFileTime()}.pdf";
@@ -122,6 +127,7 @@ namespace ImgScanner
             _section = _document.AddSection();
         }
 
+        [LoggerRewriting]
         private bool IsNewDocumentPage(string file)
         {
             var pageNumberStr = Path.GetFileNameWithoutExtension(file)
@@ -135,6 +141,7 @@ namespace ImgScanner
             return difference > 1;
         }
 
+        [LoggerRewriting]
         private bool IsEndingBarcode(FileStream stream, out bool invalidFile)
         {
             var reader = new BarcodeReader { AutoRotate = true };
@@ -156,6 +163,7 @@ namespace ImgScanner
             }
         }
 
+        [LoggerRewriting]
         private void AddFileToDoc(string file)
         {
             _section.AddPageBreak();
@@ -169,6 +177,7 @@ namespace ImgScanner
             _usedFiles.Add(file);
         }
 
+        [LoggerRewriting]
         public void MoveCorruptedSequence()
         {
             foreach (var file in _usedFiles)

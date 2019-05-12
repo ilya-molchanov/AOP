@@ -10,6 +10,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{E2A75BAF-4C96-4935-995B-02142B86095D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CentralServiceReceiver", "CentralServiceReceiver\CentralServiceReceiver.csproj", "{909CBDC1-9DD9-4A3A-B9DC-2FB009825589}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25} = {F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggerRewriting", "LoggerRewriting\LoggerRewriting.csproj", "{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{909CBDC1-9DD9-4A3A-B9DC-2FB009825589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{909CBDC1-9DD9-4A3A-B9DC-2FB009825589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{909CBDC1-9DD9-4A3A-B9DC-2FB009825589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B070AB-9D5A-49F9-B53F-2ABDD2FEFE25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
